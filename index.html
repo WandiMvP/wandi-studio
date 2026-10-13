@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wandi Studio — High-Performance Discord Bots & FiveM Enterprise Solutions</title>
+    <meta name="description" content="Otomatisasi server Discord & FiveM Anda dengan 1Die Architecture: Bot pembayaran QRIS otomatis 24/7, absensi gang FiveM real-time, 1Die CyberShield Anti-Phishing, dan notifikasi tiket WhatsApp.">
+    <meta name="keywords" content="bot discord, bot pembayaran qris, bot absensi fivem, bot antiphising discord, bot tiket whatsapp, wandi studio, 1die engine, fivem developer">
+    <meta name="author" content="Wandi Studio & 1Die Architecture">
+
+    <!-- Favicon (Discord Cyber Blue) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 127.14 96.36'><path fill='%235865F2' d='M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z'/></svg>">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Wandi Studio — Custom Discord Bots Powered by 1Die Engine">
+    <meta property="og:description" content="Tingkatkan omzet dan efisiensi server Anda. Coba langsung live simulator interaktifnya sekarang!">
+    <meta property="og:url" content="http://dsc.gg/fivemfinder">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Ambient Glow Blobs -->
+    <div class="blob-wrapper" aria-hidden="true">
+        <div class="glow-blob blob-1"></div>
+        <div class="glow-blob blob-2"></div>
+        <div class="glow-blob blob-3"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#hero" class="brand-logo" id="nav-brand">
+                <span class="logo-icon"><i class="fa-brands fa-discord"></i></span>
+                <span class="logo-text">Wandi<span class="logo-accent">Studio</span></span>
+            </a>
+
+            <div class="nav-menu" id="nav-menu">
+                <a href="#pain-points" class="nav-link"><i class="fa-solid fa-lightbulb"></i> Masalah & Solusi</a>
+                <a href="#catalog" class="nav-link"><i class="fa-solid fa-shapes"></i> Solusi 1Die</a>
+                <a href="#simulator" class="nav-link"><i class="fa-solid fa-gamepad"></i> Playable Sandbox</a>
+                <a href="#features" class="nav-link"><i class="fa-solid fa-shield-halved"></i> Arsitektur</a>
+                <a href="#guarantee" class="nav-link"><i class="fa-solid fa-certificate"></i> Garansi</a>
+                <a href="#faq" class="nav-link"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+            </div>
+
+            <div class="nav-actions">
+                <a href="http://dsc.gg/fivemfinder" target="_blank" rel="noopener noreferrer" class="btn btn-discord btn-join" id="nav-btn-discord" title="Gabung ke Server Discord Wandi Studio">
+                    <i class="fa-brands fa-discord"></i>
+                    <span>Join Discord</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square nav-ext-icon"></i>
+                </a>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" id="hero">
+            <div class="hero-container">
+                <div class="hero-badge">
+                    <span class="pulse-dot"></span>
+                    <span>Powered by 1Die High-Concurrency Architecture</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    Otomatisasi Server & Bisnis Anda dengan <span class="gradient-text">1Die Engine Berperforma Tinggi</span>
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Hentikan pekerjaan manual yang melelahkan. Kami hadirkan ekosistem bot Discord enterprise: <strong>1Die Auto-Billing QRIS Realtime</strong>, sistem absensi gang FiveM otomatis, <strong>1Die CyberShield Anti-Phishing</strong>, hingga <strong>Pemantauan Tiket Terintegrasi WhatsApp</strong>.
+                </p>
+
+                <div class="hero-cta-group">
+                    <a href="http://dsc.gg/fivemfinder" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg" id="btn-hero-discord">
+                        <i class="fa-brands fa-discord"></i> Konsultasi via Server Discord
+                    </a>
+                    <a href="#simulator" class="btn btn-secondary btn-lg" id="btn-hero-demo">
+                        <i class="fa-solid fa-gamepad"></i> Uji Coba Live Simulator
+                    </a>
+                </div>
+
+                <!-- Live Quick Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">10,000+</div>
+                        <div class="stat-label">Member Community Tested</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">99.9%</div>
+                        <div class="stat-label">FiveM Protocol Sync Rate</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">0.08s</div>
+                        <div class="stat-label">Heuristic Threat Response</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">Rate by PM</div>
+                        <div class="stat-label">Konsultasi Ramah & Fleksibel</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Running Tech Marquee Ticker -->
+            <div class="marquee-wrapper" aria-hidden="true">
+                <div class="marquee-track">
+                    <span>⚡ FiveM Protocol Real-time Sync</span>
+                    <span>•</span>
+                    <span>💳 Dynamic QRIS Settlement 5-15s</span>
+                    <span>•</span>
+                    <span>📱 WhatsApp Multi-Protocol Socket Bridge</span>
+                    <span>•</span>
+                    <span>🛡️ 0.08s Heuristic URL Threat Defense</span>
+                    <span>•</span>
+                    <span>🔒 Anti-Bruteforce State Machine</span>
+                    <span>•</span>
+                    <span>🚀 1Die Low-Latency Microservice</span>
+                    <span>•</span>
+                    <span>📦 Full Source Code (No Encrypted Locks)</span>
+                    <span>•</span>
+                    <span>⚡ FiveM Protocol Real-time Sync</span>
+                    <span>•</span>
+                    <span>💳 Dynamic QRIS Settlement 5-15s</span>
+                    <span>•</span>
+                    <span>📱 WhatsApp Multi-Protocol Socket Bridge</span>
+                    <span>•</span>
+                    <span>🛡️ 0.08s Heuristic URL Threat Defense</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- MARKETING SECTION: PAIN POINT & AGITATION -->
+        <section class="pain-section" id="pain-points">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag"><i class="fa-solid fa-triangle-exclamation"></i> Tantangan Nyata Pemilik Server</span>
+                    <h2 class="section-title">Apakah Server Anda Masih Menghadapi Masalah Ini?</h2>
+                    <p class="section-desc">Mengelola komunitas dan server gaming secara manual menghabiskan banyak waktu, tenaga, dan rawan kesalahan fatal.</p>
+                </div>
+
+                <div class="pain-grid">
+                    <div class="pain-card">
+                        <div class="pain-icon"><i class="fa-solid fa-moon"></i></div>
+                        <h3 class="pain-title">Begadang Setiap Malam Rekap Absensi</h3>
+                        <p class="pain-desc">Lelah harus terjaga hingga jam 1 - 2 malam hanya untuk memeriksa player in-game FiveM satu per satu dan mencatat kehadiran anggota fraksi secara manual?</p>
+                    </div>
+
+                    <div class="pain-card">
+                        <div class="pain-icon"><i class="fa-solid fa-phone-slash"></i></div>
+                        <h3 class="pain-title">Kecolongan Tiket Darurat Warga</h3>
+                        <p class="pain-desc">Sering kehilangan pemain potensial karena laporan darurat warga di Discord tidak segera direspon staf yang sedang tidak berada di depan PC?</p>
+                    </div>
+
+                    <div class="pain-card">
+                        <div class="pain-icon"><i class="fa-solid fa-hourglass-half"></i></div>
+                        <h3 class="pain-title">Standby 24 Jam Cek Mutasi Bank Manual</h3>
+                        <p class="pain-desc">Capek harus selalu stand-by mengecek mutasi transfer bank/e-wallet manual hanya untuk menyerahkan role VIP, paket donatur, atau produk digital?</p>
+                    </div>
+
+                    <div class="pain-card">
+                        <div class="pain-icon"><i class="fa-solid fa-shield-virus"></i></div>
+                        <h3 class="pain-title">Ancaman Server Kena Raid & Phishing</h3>
+                        <p class="pain-desc">Khawatir akun anggota komunitas dibajak sindikat penipu gara-gara link jebakan phishing Nitro palsu yang disebar bot perusuh di server Anda?</p>
+                    </div>
+                </div>
+
+                <!-- VALUE ANCHORING BANNER -->
+                <div class="value-anchor-box">
+                    <div class="value-anchor-badge"><i class="fa-solid fa-bolt"></i> SOLUSI EFISIENSI 1DIE ENGINE</div>
+                    <h3 class="value-anchor-title">Mengapa Menggaji Admin Manual Jika Bot Bisa Bekerja 10x Lebih Akurat?</h3>
+                    <p class="value-anchor-desc">
+                        Menggaji staf khusus untuk rekap data dan kasir butuh biaya jutaan rupiah setiap bulannya dan tetap rentan <em>human error</em>. Dengan <strong>1Die Architecture</strong>, Anda berinvestasi satu kali untuk sistem otomatis yang bekerja 24/7 tanpa lelah, tanpa salah hitung, dan tanpa henti.
+                    </p>
+                </div>
+
+                <!-- INTERACTIVE TIME & COST SAVER CALCULATOR -->
+                <div class="calculator-box">
+                    <div class="calc-header">
+                        <span class="calc-badge"><i class="fa-solid fa-calculator"></i> SIMULATOR PENGHEMATAN WAKTU & BIAYA</span>
+                        <h3 class="calc-title">Berapa Banyak Waktu & Uang yang Bisa Anda Hemat?</h3>
+                        <p class="calc-desc">Geser slider di bawah ini untuk melihat estimasi penghematan operasional server Anda dengan 1Die Engine.</p>
+                    </div>
+
+                    <div class="calc-slider-wrap">
+                        <div class="slider-label-row">
+                            <span>Estimasi Transaksi / Sesi Absensi per Hari:</span>
+                            <span class="slider-val" id="calc-slider-display">15 Sesi / Transaksi</span>
+                        </div>
+                        <input type="range" min="3" max="50" value="15" class="calc-slider" id="calc-range-slider">
+                        <div class="slider-scale">
+                            <span>3 (Server Kecil)</span>
+                            <span>25 (Komunitas Aktif)</span>
+                            <span>50+ (Server Besar)</span>
+                        </div>
+                    </div>
+
+                    <div class="calc-results-grid">
+                        <div class="calc-res-card">
+                            <div class="calc-res-num" id="calc-hours-saved">45 Jam</div>
+                            <div class="calc-res-label">Waktu Begadang Dihemat / Bulan</div>
+                        </div>
+                        <div class="calc-res-card">
+                            <div class="calc-res-num" id="calc-cost-saved">Rp 1.500.000+</div>
+                            <div class="calc-res-label">Potensi Penghematan Gaji Staf</div>
+                        </div>
+                        <div class="calc-res-card">
+                            <div class="calc-res-num" style="color: #57f287;">100% Zero Error</div>
+                            <div class="calc-res-label">Akurasi Perhitungan Otomatis</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Catalog Section -->
+        <section class="catalog-section" id="catalog">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag"><i class="fa-solid fa-fire"></i> Lini Produk Unggulan</span>
+                    <h2 class="section-title">Katalog Solusi Bot Discord — 1Die Series</h2>
+                    <p class="section-desc">Dirancang dengan arsitektur microservice tingkat lanjut untuk performa tinggi, hemat memory footprint, dan bebas crash.</p>
+                </div>
+
+                <!-- Filter Tabs -->
+                <div class="filter-tabs" id="filter-tabs">
+                    <button class="filter-btn active" data-filter="all"><i class="fa-solid fa-list-check"></i> Semua Solusi 1Die</button>
+                    <button class="filter-btn" data-filter="store"><i class="fa-solid fa-qrcode"></i> Kasir & Pembayaran QRIS</button>
+                    <button class="filter-btn" data-filter="fivem"><i class="fa-solid fa-car"></i> FiveM & Gang Absensi</button>
+                    <button class="filter-btn" data-filter="monitoring"><i class="fa-brands fa-whatsapp"></i> Tiket & WhatsApp Alert</button>
+                    <button class="filter-btn" data-filter="security"><i class="fa-solid fa-shield-virus"></i> Cyber Defense Anti-Phishing</button>
+                    <button class="filter-btn" data-filter="ticket"><i class="fa-solid fa-ticket"></i> Enterprise Ticket System</button>
+                    <button class="filter-btn" data-filter="games"><i class="fa-solid fa-dragon"></i> Mini Game RPG</button>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="products-grid" id="products-grid">
+                    <!-- Populated dynamically via app.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- VPS Cost Disclaimer Banner -->
+        <section class="vps-notice-section">
+            <div class="section-container" style="padding-top: 0; padding-bottom: 2rem;">
+                <div class="vps-notice-banner">
+                    <div class="vps-notice-icon">
+                        <i class="fa-solid fa-server"></i>
+                    </div>
+                    <div class="vps-notice-content">
+                        <h4>Transparansi Biaya Server (Hosting VPS)</h4>
+                        <p>
+                            <strong>Catatan Penting:</strong> Biaya lisensi/jasa pembuatan bot belum termasuk biaya sewa server VPS (tempat bot dijalankan agar aktif 24 jam nonstop). Anda bebas menggunakan server VPS pribadi Anda, atau kami siap merekomendasikan penyedia VPS stabil & berkecepatan tinggi (estimasi sewa <strong>Rp 150.000 — Rp 200.000/bulan</strong>) beserta pendampingan instalasi gratis sampai online.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Playable Live Simulator Section -->
+        <section class="simulator-section" id="simulator">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag"><i class="fa-solid fa-gamepad"></i> Interactive Sandbox</span>
+                    <h2 class="section-title">Uji Coba Langsung 1Die Engine Beraksi!</h2>
+                    <p class="section-desc">Bukan sekadar gambar mati! Klik tombol simulasi bayar QRIS, tes link jebakan di tester anti-phishing, atau coba notifikasi WhatsApp tiket secara live di bawah ini.</p>
+                </div>
+
+                <div class="simulator-wrapper">
+                    <!-- Simulator Navigation Tabs -->
+                    <div class="sim-nav">
+                        <button class="sim-tab-btn active" data-sim="qrispay">
+                            <i class="fa-solid fa-qrcode"></i> 1Die Auto-Billing QRIS
+                        </button>
+                        <button class="sim-tab-btn" data-sim="antiphish">
+                            <i class="fa-solid fa-shield-halved"></i> 1Die CyberShield Tester
+                        </button>
+                        <button class="sim-tab-btn" data-sim="waalert">
+                            <i class="fa-brands fa-whatsapp"></i> 1Die WhatsApp Dispatcher
+                        </button>
+                        <button class="sim-tab-btn" data-sim="absensi">
+                            <i class="fa-solid fa-clipboard-user"></i> 1Die Attendance Core
+                        </button>
+                    </div>
+
+                    <!-- Simulator Dynamic Container -->
+                    <div id="simulator-dynamic-content">
+                        <!-- Rendered by app.js depending on active tab -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us / Tech Features -->
+        <section class="features-section" id="features">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag"><i class="fa-solid fa-cpu"></i> Keunggulan Arsitektur</span>
+                    <h2 class="section-title">Mengapa Memilih 1Die Architecture?</h2>
+                    <p class="section-desc">Dibangun dengan standar rekayasa perangkat lunak enterprise tanpa kompromi kualitas.</p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-box">
+                        <div class="feature-icon"><i class="fa-solid fa-qrcode"></i></div>
+                        <h3 class="feature-title">Instant QRIS Settlement Engine</h3>
+                        <p class="feature-desc">Menerima pembayaran otomatis via QRIS Dinamis (Semua e-Wallet & Bank). Sinkronisasi mutasi sekejap mata dalam 5-15 detik dengan auto-delivery produk dan role instan.</p>
+                    </div>
+
+                    <div class="feature-box">
+                        <div class="feature-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                        <h3 class="feature-title">Multi-Protocol WhatsApp Bridge</h3>
+                        <p class="feature-desc">Jembatan komunikasi socket terenkripsi langsung ke WhatsApp Owner. Aduan penting warga kota otomatis berdering di HP Anda 24/7 tanpa harus membuka Discord PC.</p>
+                    </div>
+
+                    <div class="feature-box">
+                        <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h3 class="feature-title">Heuristic Threat Defense</h3>
+                        <p class="feature-desc">Inspeksi mendalam tautan mencurigakan dalam 0.08 detik. Melindungi server dari domain fake Nitro, token grabber, dan sindikat raid sebelum ada korban.</p>
+                    </div>
+
+                    <div class="feature-box">
+                        <div class="feature-icon"><i class="fa-solid fa-database"></i></div>
+                        <h3 class="feature-title">Embedded Zero-Corruption Engine</h3>
+                        <p class="feature-desc">Menggunakan Write-Ahead Logging embedded storage yang tahan banting, konsumsi RAM super ringan (30-60 MB), dan bebas resiko korupsi data saat server mendadak restart.</p>
+                    </div>
+
+                    <div class="feature-box">
+                        <div class="feature-icon"><i class="fa-solid fa-network-wired"></i></div>
+                        <h3 class="feature-title">FiveM Protocol Scraping Pipeline</h3>
+                        <p class="feature-desc">Sinkronisasi data pemain live FiveM secara presisi. Dilengkapi penanganan jadwal transisi tengah malam otomatis dan pelacakan multi-identifier (license, discord, steam).</p>
+                    </div>
+
+                    <div class="feature-box">
+                        <div class="feature-icon"><i class="fa-solid fa-microchip"></i></div>
+                        <h3 class="feature-title">Microservice Low Memory Footprint</h3>
+                        <p class="feature-desc">Dioptimalkan secara asinkron dengan zero-leak garbage handling. Bot dapat beroperasi sangat mulus di VPS dengan spesifikasi hemat tanpa membuat lag server Anda.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PACKAGE SOLUTION RECOMMENDATION (BUYER PERSONAS) -->
+        <section class="packages-section" id="packages">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag"><i class="fa-solid fa-layer-group"></i> Rekomendasi Solusi Cepat</span>
+                    <h2 class="section-title">Pilih Paket Sesuai Kebutuhan Server Anda</h2>
+                    <p class="section-desc">Tidak yakin produk mana yang Anda butuhkan? Berikut rekomendasi kombinasi bot yang paling populer.</p>
+                </div>
+
+                <div class="packages-grid">
+                    <div class="package-card">
+                        <div class="pkg-badge">GANG & FACTION FOCUS</div>
+                        <h3 class="pkg-title">Paket Disiplin Fraksi</h3>
+                        <p class="pkg-desc">Khusus Leader Gang, Fam, Polisi, dan EMS yang ingin mengontrol keaktifan anggota tanpa drama.</p>
+                        <ul class="pkg-features">
+                            <li><i class="fa-solid fa-check"></i> 1Die Attendance Core (7 Sesi Otomatis)</li>
+                            <li><i class="fa-solid fa-check"></i> Auto Claim Role dengan Password Gang</li>
+                            <li><i class="fa-solid fa-check"></i> Rekap Harian & Bulanan Visual Embed</li>
+                            <li><i class="fa-solid fa-check"></i> Free Setup & Panduan Deployment</li>
+                        </ul>
+                        <a href="http://dsc.gg/fivemfinder" target="_blank" class="btn btn-secondary btn-block">Konsultasi Paket Fraksi</a>
+                    </div>
+
+                    <div class="package-card featured">
+                        <div class="pkg-badge featured-badge"><i class="fa-solid fa-crown"></i> PALING REKOMENDASI</div>
+                        <h3 class="pkg-title">Paket Server Owner Enterprise</h3>
+                        <p class="pkg-desc">Solusi all-in-one terlengkap untuk Owner Server FiveM yang ingin monetisasi dan operasional berjalan 100% otomatis.</p>
+                        <ul class="pkg-features">
+                            <li><i class="fa-solid fa-check"></i> 1Die Auto-Billing & QRIS Engine 24/7</li>
+                            <li><i class="fa-solid fa-check"></i> 1Die WhatsApp Dispatcher (Tiket Alert ke HP)</li>
+                            <li><i class="fa-solid fa-check"></i> 1Die CyberShield Anti-Phishing Defense</li>
+                            <li><i class="fa-solid fa-check"></i> 1Die Enterprise Ticket System & Transkrip</li>
+                            <li><i class="fa-solid fa-check"></i> Prioritas Support & Free Deployment VPS</li>
+                        </ul>
+                        <a href="http://dsc.gg/fivemfinder" target="_blank" class="btn btn-primary btn-block">Konsultasi Paket Enterprise</a>
+                    </div>
+
+                    <div class="package-card">
+                        <div class="pkg-badge">DIGITAL STORE & VPN</div>
+                        <h3 class="pkg-title">Paket Kasir Digital 24/7</h3>
+                        <p class="pkg-desc">Khusus seller layanan VPN, VIP donatur, atau aset game yang ingin omzet mengalir saat Anda tidur.</p>
+                        <ul class="pkg-features">
+                            <li><i class="fa-solid fa-check"></i> 1Die Auto-Billing QRIS Settlement Realtime</li>
+                            <li><i class="fa-solid fa-check"></i> Instant Role & DM Delivery Engine</li>
+                            <li><i class="fa-solid fa-check"></i> Laporan Mutasi & Omzet Harian Admin</li>
+                            <li><i class="fa-solid fa-check"></i> Anti-Fraud & Bukti Transfer Palsu</li>
+                        </ul>
+                        <a href="http://dsc.gg/fivemfinder" target="_blank" class="btn btn-secondary btn-block">Konsultasi Paket Kasir</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIAL WALL (CENSORED CLIENT NAMES FOR PRIVACY / NDA) -->
+        <section class="testimonials-section" id="testimonials">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag"><i class="fa-solid fa-comments"></i> Bukti Nyata Klien Kami</span>
+                    <h2 class="section-title">Apa Kata Mereka yang Sudah Menggunakan 1Die Engine?</h2>
+                    <p class="section-desc">Nama komunitas dan server disamarkan demi menjaga privasi dan kerahasiaan operasional klien kami.</p>
+                </div>
+
+                <div class="testimonials-grid">
+                    <div class="testi-card">
+                        <div class="testi-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testi-text">
+                            "Bot kasir QRIS 1Die bener-bener otomatis tanpa cacat. Donatur beli paket VIP jam 2 dini hari pas staf lagi tidur lelap, role Discord dan benefit in-game langsung masuk dalam 10 detik. Zero komplain dari warga."
+                        </p>
+                        <div class="testi-author">
+                            <div class="testi-avatar" style="background: linear-gradient(135deg, #00F0FF, #5865F2);">R</div>
+                            <div>
+                                <div class="testi-name">Rian K.</div>
+                                <div class="testi-role">Server Owner di <strong>G**** Roleplay</strong> (500+ Player)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testi-card">
+                        <div class="testi-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testi-text">
+                            "Sistem absensi 7 sesi malam via scraping FiveM API sangat akurat. Ga ada lagi anggota gang yang ngeles atau drama salah rekap absen. Waktu rekap admin gang kami terpangkas 100%, tinggal pantau rekap bulanan."
+                        </p>
+                        <div class="testi-author">
+                            <div class="testi-avatar" style="background: linear-gradient(135deg, #F59E0B, #EF4444);">A</div>
+                            <div>
+                                <div class="testi-name">Arya S.</div>
+                                <div class="testi-role">Lead Faksi di <strong>7* B****** RP</strong> (Gang GTA V)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testi-card">
+                        <div class="testi-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testi-text">
+                            "Paling juara fitur jembatan notifikasi WhatsApp-nya. Saya ga perlu mantau Discord seharian di depan laptop, setiap ada tiket urgent warga langsung masuk notif ke WhatsApp HP saya. Responsif dan aman."
+                        </p>
+                        <div class="testi-author">
+                            <div class="testi-avatar" style="background: linear-gradient(135deg, #10B981, #00F0FF);">K</div>
+                            <div>
+                                <div class="testi-name">Kevin M.</div>
+                                <div class="testi-role">Project Lead di <strong>D**** K*** Community</strong> (3,000+ Member)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3 PILAR GARANSI & ANTI-GHOSTING POLICY -->
+        <section class="guarantee-section" id="guarantee">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag"><i class="fa-solid fa-certificate"></i> Jaminan Ketenangan Klien</span>
+                    <h2 class="section-title">3 Pilar Garansi & Perlindungan Investasi Anda</h2>
+                    <p class="section-desc">Kami memastikan setiap rupiah investasi Anda aman dan memberikan dampak nyata bagi server Anda.</p>
+                </div>
+
+                <div class="guarantee-grid">
+                    <div class="guarantee-card">
+                        <div class="guarantee-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                        <h3 class="guarantee-title">Garansi Bug-Fix & Error</h3>
+                        <p class="guarantee-desc">Jika terjadi kendala teknis atau galat pada bot setelah serah terima, tim kami siap memperbaikinya tanpa ada biaya tambahan.</p>
+                    </div>
+
+                    <div class="guarantee-card">
+                        <div class="guarantee-icon"><i class="fa-solid fa-folder-open"></i></div>
+                        <h3 class="guarantee-title">Full Source Code (No Encrypted Locks)</h3>
+                        <p class="guarantee-desc">Source code sepenuhnya menjadi milik Anda tanpa enkripsi lisensi tersembunyi yang membuat Anda terkunci atau ketergantungan.</p>
+                    </div>
+
+                    <div class="guarantee-card">
+                        <div class="guarantee-icon"><i class="fa-solid fa-handshake-angle"></i></div>
+                        <h3 class="guarantee-title">Free Setup & Deployment Assistance</h3>
+                        <p class="guarantee-desc">Anda tidak perlu pusing soal teknis pemasangan. Kami dampingi dan bantu pasang di VPS Anda sampai bot aktif 100% online.</p>
+                    </div>
+                </div>
+
+                <!-- ANTI-GHOSTING COMMITMENT BANNER -->
+                <div class="anti-ghosting-banner">
+                    <div class="anti-ghosting-icon">
+                        <i class="fa-solid fa-handshake-simple"></i>
+                    </div>
+                    <div class="anti-ghosting-text">
+                        <h4>Komitmen "Anti-Ghosting Policy" & After-Sales Berkelanjutan</h4>
+                        <p>
+                            Banyak penjual bot di Discord menghilang setelah uang ditransfer. <strong>Wandi Studio memegang teguh komitmen profesionalitas:</strong> Kami memposisikan diri sebagai partner jangka panjang server Anda dengan channel komunikasi prioritas untuk konsultasi, maintenance, dan upgrade di masa mendatang.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Order Workflow -->
+        <section class="workflow-section" id="workflow">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag"><i class="fa-solid fa-route"></i> Alur Kerja</span>
+                    <h2 class="section-title">Bagaimana Alur Pemesanannya?</h2>
+                    <p class="section-desc">Proses ringkas, transparan, dan langsung terhubung dengan developer.</p>
+                </div>
+
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-badge">1</div>
+                        <h3 class="step-title">Join Server Discord</h3>
+                        <p class="step-desc">Masuk ke server kami melalui link <a href="http://dsc.gg/fivemfinder" target="_blank" class="step-link">dsc.gg/fivemfinder</a> lalu buka tiket atau mention <strong>Wandi</strong>.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-badge">2</div>
+                        <h3 class="step-title">Konsultasi Kebutuhan</h3>
+                        <p class="step-desc">Sampaikan kebutuhan bot Anda (apakah paket 1Die series yang sudah ada atau custom request FiveM script).</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-badge">3</div>
+                        <h3 class="step-title">Pengujian di Server Staging</h3>
+                        <p class="step-desc">Bot disiapkan dan diuji coba. Anda bisa mencoba tombol, respon embed, dan alur bot sebelum rilis ke publik.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-badge">4</div>
+                        <h3 class="step-title">Deploy ke VPS & Serah Terima</h3>
+                        <p class="step-desc">Bot dipasang di VPS Anda hingga jalan 24/7. Seluruh file diserahkan dan masa garansi resmi aktif.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" id="faq">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag"><i class="fa-solid fa-circle-question"></i> FAQ</span>
+                    <h2 class="section-title">Pertanyaan yang Sering Diajukan</h2>
+                </div>
+
+                <div class="faq-accordion" id="faq-accordion">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Bagaimana cara menghubungi Wandi Studio untuk order bot?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Cukup klik tombol <strong>Join Discord</strong> di website ini atau akses langsung tautan <a href="http://dsc.gg/fivemfinder" target="_blank">dsc.gg/fivemfinder</a>. Anda bisa langsung membuat tiket konsultasi atau chat langsung dengan saya.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Berapa biaya sewa VPS dan apakah sudah termasuk dalam harga bot?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Biaya pembuatan/lisensi bot belum termasuk biaya sewa server VPS. Untuk bot berkinerja tinggi yang aktif 24 jam nonstop, sewa VPS stabil berkisar antara <strong>Rp 150.000 hingga Rp 200.000 per bulan</strong>. Anda bebas menggunakan provider VPS milik Anda sendiri, atau kami rekomendasikan dan bantu pasang secara gratis sampai bot aktif.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Produk apa saja yang bisa dijual menggunakan 1Die Auto-Billing?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sangat serbaguna! Bisa untuk jualan <strong>Paket VIP / Donatur Server FiveM, Layanan VPN Gaming, Koin / Saldo In-Game, Lisensi Script, Role Khusus Discord</strong>, maupun produk digital lainnya. Pembeli bayar via QRIS, dan produk langsung terkirim otomatis detik itu juga tanpa admin cek manual.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Bagaimana sistem penentuan tarif (Rate by PM)?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Harga bot kami sangat bersahabat dan fleksibel disesuaikan dengan kebutuhan server Anda (apakah memerlukan bot siap pakai dari 1Die series atau custom script integrasi FiveM yang lebih kompleks). Konsultasi awal 100% gratis!</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Apakah source code diserahkan sepenuhnya?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Ya! Anda mendapatkan full file source code tanpa enkripsi yang terkunci, sehingga Anda memiliki kendali penuh atas bot server Anda sendiri.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Banner Section -->
+        <section class="cta-banner-section">
+            <div class="cta-banner-container">
+                <div class="cta-banner-content">
+                    <h2 class="cta-title">Siap Membawa Server Anda ke Level Berikutnya?</h2>
+                    <p class="cta-subtitle">Diskusikan kebutuhan bot Anda sekarang di server Discord kami. Slot pengerjaan custom terbatas setiap minggunya agar kualitas arsitektur tetap prima!</p>
+                    <div class="cta-buttons">
+                        <a href="http://dsc.gg/fivemfinder" target="_blank" rel="noopener noreferrer" class="btn btn-discord btn-lg" id="btn-cta-discord">
+                            <i class="fa-brands fa-discord"></i> Masuk Discord: dsc.gg/fivemfinder
+                        </a>
+                        <a href="#simulator" class="btn btn-outline btn-lg" id="btn-cta-sandbox">
+                            <i class="fa-solid fa-gamepad"></i> Coba Sandbox Lagi
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#hero" class="brand-logo">
+                    <span class="logo-icon"><i class="fa-brands fa-discord"></i></span>
+                    <span class="logo-text">Wandi<span class="logo-accent">Studio</span></span>
+                </a>
+                <p class="footer-bio">
+                    Spesialis pengembangan bot Discord canggih, sistem otomasi pembayaran QRIS, FiveM integrations, dan sistem notifikasi WhatsApp realtime.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Navigasi Cepat</h4>
+                <ul>
+                    <li><a href="#pain-points">Masalah & Solusi</a></li>
+                    <li><a href="#catalog">Solusi 1Die</a></li>
+                    <li><a href="#simulator">Playable Sandbox</a></li>
+                    <li><a href="#guarantee">Jaminan Garansi</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Pusat Komunikasi</h4>
+                <p><i class="fa-brands fa-discord"></i> Server Discord: <a href="http://dsc.gg/fivemfinder" target="_blank">dsc.gg/fivemfinder</a></p>
+                <p><i class="fa-solid fa-user-check"></i> Developer: <strong>Wandi (FiveM Specialist)</strong></p>
+                <p><i class="fa-solid fa-code"></i> Powered by <strong>1Die High-Concurrency Architecture</strong></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Wandi Studio. All rights reserved. Dedicated for Discord Communities & FiveM Game Servers.</p>
+        </div>
+    </footer>
+
+    <!-- Product Details Modal -->
+    <div class="modal-backdrop" id="product-modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <button class="modal-close" id="modal-close-btn" aria-label="Tutup Dialog">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="modal-body" id="modal-content-body">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Floating Discord Quick-Chat Button -->
+    <a href="http://dsc.gg/fivemfinder" target="_blank" rel="noopener noreferrer" class="mobile-floating-discord" id="btn-mobile-floating" aria-label="Chat Discord Wandi Studio">
+        <i class="fa-brands fa-discord"></i>
+        <span>Chat Discord</span>
+    </a>
+
+    <!-- Floating Back to Top Button -->
+    <button class="back-to-top" id="btn-back-to-top" aria-label="Kembali ke atas">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="app.js"></script>
+</body>
+</html>
